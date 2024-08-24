@@ -1,25 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <!-- BROWSER TITLE ICON -->
     <link rel="icon" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./app.js"></script>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Pick Your Flick</title>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        content: ["./src/**/*.{html,js}"],
+        theme: {},
+      };
+    </script>
+    <script
+      src="https://kit.fontawesome.com/d758225057.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <!-- HERO SECTION -->
-    <section id="hero">
+    <!-- HEADER SECTION -->
+    <header class="m-10 ">
       <!-- NAV SECTION -->
-      <nav></nav>
-      <!-- HERO MAIN CONTENT -->
-      
-    </section>
+      <nav>
+        <!-- NAV CONTAINERS SECTION -->
+        <ul class="flex justify-between">
+          <!-- NAV LOGO/HOME SECTION -->
+          <li class="mx-6">
+            <a href="#">
+              <img src="" class="p-2" alt="LOGO">
+            </a>
+          <!-- NAV MAIN MENU CONTAINERS SECTION -->
+          </li>
+          <li>
+            <ul class="flex justify-between bg-blue-400 shadow-md shadow-black rounded-xl outline-blue-200 outline">
+              <li class="mx-6">
+                <a href="#" class="p-2">
+                 Quiz 
+                </a>
+              </li>
+              <li class="mx-6">
+                <a href="#" class="p-2">
+                  DIY
+                </a>
+              </li>
+              <li class="mx-6">
+                <a href="#" class="p-2">
+                  Wildcard
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- NAV USER SECTION -->
+          <li class="mx-6">
+            <a href="" class="p-2">
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <!-- MAIN CONTENT -->
-    
+    <main class="m-10 bg-blue-400 shadow-2xl shadow-black h-svh rounded-xl outline-blue-200 outline">
+      <!-- HERO SECTION -->
+      <section id="hero" class="flex justify-center">
+        <!-- HERO TITLES CONTAINER -->
+        <div class="text-center">
+          <h1 class="hero__title">
+            Pick Your Flick
+          </h1>
+          <h3 class="hero__subtitle">
+            Tired of Doom Scrolling for something to watch?
+            <br>
+            Play the quiz and let us find the movie you've been waiting for!
+          </h3>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER SECTION -->
+    <footer></footer>
   </body>
-  <!-- FOOTER SECTION -->
-  <footer></footer>
 </html>

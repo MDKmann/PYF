@@ -1,0 +1,69 @@
+
+/* PLACE HOLDER CSS RESET */
+
+
+/*=======================================================
+=            CSS RESET Section comment block            =
+========================================================*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* dark mode user-agent-styles */
+/* improves punctuation in supported browsers */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+  hanging-punctuation: first last;
+}
+
+/* min body height */
+body {
+  min-height: 100svh;
+}
+
+/* responsive images/videos */
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Improved heading in supported browsers */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* improve readability with max-width on paragraphs and lists */
+/* prevent orphans in supported browsers */
+p, li {
+  max-width: var(--p-max-width, 65ch);
+  text-wrap: pretty;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* CREDIT https://www.youtube.com/watch?v=cCAtD_BAHNw&t=33s */
+/*=====  End of CSS RESET Section comment block  ======*/
