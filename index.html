@@ -13,7 +13,18 @@
       tailwind.config = {
         darkMode: "class",
         content: ["./src/**/*.{html,js}"],
-        theme: {},
+        theme: {
+          extend: {
+            fontSize: {
+              'h1': '48px',
+              'h2': '36px',
+              'h3': '30px',
+              'h4': '24px',
+              'h5': '20px',
+              'h6': '16px',
+            },
+          },
+        },
       };
     </script>
     <script
@@ -26,15 +37,47 @@
     <header class="m-10 ">
       <!-- NAV SECTION -->
       <nav>
-        <!-- NAV CONTAINERS SECTION -->
-        <ul class="flex justify-between">
+        <!-- MOBILE NAV CONTAINERS SECTION -->
+         <ul class="flex justify-between">
+           <!-- MOBILE NAV LOGO/HOME SECTION -->
+          <li>
+            <a href="#">
+              <img src="" class="p-2" alt="LOGO">
+            </a>
+          </li>
+           <!-- MOBILE NAV SEARCH SECTION -->
+          <li>
+            <div class="relative">
+              <label for="Search" class="sr-only"> Search </label>
+            
+              <input
+                type="text"
+                id="Search"
+                placeholder="Search for..."
+                class="w-full rounded-md border-gray-300 py-2.5 pe-10 shadow-sm sm:text-sm"
+              />
+            
+              <span class="absolute inset-y-0 grid w-10 end-0 place-content-center">
+                <button type="button" class="text-gray-600 hover:text-gray-700">
+                  <span class="sr-only">Search</span>
+            
+                  <span class="p-1 rounded-full outline">
+                    <i aria-hidden="true" class="fas fa-wand-sparkles"></i>
+                  </span>
+                </button>
+              </span>
+            </div>
+          </li>
+         </ul>
+         <!-- DESKTOP NAV CONTAINERS SECTION -->
+        <ul class="justify-between hidden">
           <!-- NAV LOGO/HOME SECTION -->
           <li class="mx-6">
             <a href="#">
               <img src="" class="p-2" alt="LOGO">
             </a>
-          <!-- NAV MAIN MENU CONTAINERS SECTION -->
           </li>
+          <!-- NAV MAIN MENU CONTAINERS SECTION -->
           <li>
             <ul class="flex justify-between bg-blue-400 shadow-md shadow-black rounded-xl outline-blue-200 outline">
               <li class="mx-6">
@@ -68,12 +111,12 @@
       <!-- HERO SECTION -->
       <section id="hero" class="flex justify-center">
         <!-- HERO TITLES CONTAINER -->
-        <div class="text-center">
-          <h1 class="hero__title">
+        <div class="m-3 text-center">
+          <h1 class="p-2 text-2xl hero__title">
             Pick Your Flick
           </h1>
-          <h3 class="hero__subtitle">
-            Tired of Doom Scrolling for something to watch?
+          <h3 class="p-2 hero__subtitle">
+            Tired of doom scrolling for something to watch?
             <br>
             Play the quiz and let us find the movie you've been waiting for!
           </h3>
