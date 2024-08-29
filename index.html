@@ -6,7 +6,7 @@
     <link rel="icon" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pick Your Flick</title>
-    <script src="./index.js"></script>
+    <script src="./app.js"></script>
     <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -52,9 +52,10 @@
             
               <input
                 type="text"
-                id="Search"
+                id="search"
                 placeholder="Search for..."
                 class="w-full rounded-md border-gray-300 py-2.5 pe-10 shadow-sm sm:text-sm"
+                onchange="onSearchChange(event)"
               />
             
               <span class="absolute inset-y-0 grid w-10 end-0 place-content-center">
