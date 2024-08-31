@@ -1,10 +1,9 @@
 
-async function renderMovies(Title) {
-    const moviesContainer = document.querySelector(".movies");
+async function renderMovies() {
     const movies = await fetch(`https://www.omdbapi.com/?s=avengers&apikey=fd7c8c4e`);
     const moviesData = await movies.json();
-    console.log(
-    moviesData.Search.map((imdbID) => `
+    const moviesContainer = document.querySelector(".movies__container");
+    moviesContainer.innerHTML = moviesData.Search.map((movieElement) => `
                 <div class="h-auto bg-gray-200 rounded-lg movie">
                     <a href="#" class="block p-4 rounded-lg shadow-sm shadow-indigo-100">
                         <img
@@ -62,7 +61,6 @@ async function renderMovies(Title) {
                 </div>          
     `)
     .join("")
-    );
 }
 
 renderMovies();
