@@ -2,13 +2,13 @@
 async function renderMovies() {
     const movies = await fetch(`https://www.omdbapi.com/?s=avengers&apikey=fd7c8c4e`);
     const moviesData = await movies.json();
-    const moviesContainer = document.querySelector(".movies__container");
-    moviesContainer.innerHTML = moviesData.Search.map((movieElement) => `
+    const moviesContainer = document.querySelector(".movies");
+    moviesContainer.innerHTML = moviesData.Search.map((movies) => `
                 <div class="h-auto bg-gray-200 rounded-lg movie">
                     <a href="#" class="block p-4 rounded-lg shadow-sm shadow-indigo-100">
                         <img
                           alt="Movie Poster"
-                          src="${movies.Poster}<"
+                          src="${movies.Poster}"
                           class="object-cover w-full h-56 rounded-md"
                         />
                       
@@ -16,15 +16,14 @@ async function renderMovies() {
                           <dl>
                             <div class="flex justify-between">
                               <dt class="sr-only">Genre</dt>
-                              <dd class="text-sm text-gray-500">${movies.Genre}<</dd>
+                              <dd class="text-sm text-gray-500">${movies.Genre}</dd>
                               <dt class="sr-only">Year</dt>
-                              <dd class="text-sm text-gray-500">${movies.Year}<</dd>
+                              <dd class="text-sm text-gray-500">${movies.Year}</dd>
                             </div>
                       
                             <div>
                               <dt class="sr-only">Title</dt>
-                      
-                              <dd class="font-medium">${movies.title}</dd>
+                              <dd class="font-medium">${movies.Title}</dd>
                             </div>
                           </dl>
                       
@@ -34,7 +33,7 @@ async function renderMovies() {
                               <div class="mt-1.5 sm:mt-0">
                                 <p class="text-gray-500">RATED</p>
                       
-                                <p class="font-medium">${movies.Rated}<</p>
+                                <p class="font-medium">${movies.Rated}</p>
                               </div>
                             </div>
                       
@@ -52,7 +51,7 @@ async function renderMovies() {
                               <div class="mt-1.5 sm:mt-0">
                                 <p class="text-gray-500">WATCH TIME</p>
                       
-                                <p class="font-medium">${movies.Runtime}<</p>
+                                <p class="font-medium">${movies.Runtime}</p>
                               </div>
                             </div>
                           </div>
@@ -61,6 +60,8 @@ async function renderMovies() {
                 </div>          
     `)
     .join("")
+    console.log(moviesData.Search)
+    
 }
 
 renderMovies();
