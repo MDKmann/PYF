@@ -1,6 +1,73 @@
+// document.getElementById("search").onchange = function() {onSearchChange(event)};
+
+async function onSearchChange (event) {
+  const searchInput = event.target.value;
+  const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput}&apikey=fd7c8c4e`);
+    const moviesData = await movies.json();
+    const moviesContainer = document.querySelector(".movies");
+    moviesContainer.innerHTML = moviesData.Search.map((movies) => `
+                <div class="h-auto bg-gray-200 rounded-lg movie">
+                    <a href="#" class="block p-4 rounded-lg shadow-sm shadow-indigo-100">
+                        <img
+                          alt="Movie Poster"
+                          src="${movies.Poster}"
+                          class="object-cover w-full h-56 rounded-md"
+                        />
+                      
+                        <div class="mt-2">
+                          <dl>
+                            <div class="flex justify-between">
+                              <dt class="sr-only">Genre</dt>
+                              <dd class="text-sm text-gray-500">${movies.Genre}</dd>
+                              <dt class="sr-only">Year</dt>
+                              <dd class="text-sm text-gray-500">${movies.Year}</dd>
+                            </div>
+                      
+                            <div>
+                              <dt class="sr-only">Title</dt>
+                              <dd class="font-medium">${movies.Title}</dd>
+                            </div>
+                          </dl>
+                      
+                          <div class="flex items-center gap-8 mt-6 text-xs">
+                            <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                                <i class="text-indigo-500 far fa-hand-point-down"></i>
+                              <div class="mt-1.5 sm:mt-0">
+                                <p class="text-gray-500">RATED</p>
+                      
+                                <p class="font-medium">${movies.Rated}</p>
+                              </div>
+                            </div>
+                      
+                            <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                                <i class="text-indigo-500 far fa-star "></i>
+                              <div class="mt-1.5 sm:mt-0">
+                                <p class="text-gray-500">IMDb RATING</p>
+                      
+                                <p class="font-medium">${movies.imdbRating}</p>
+                              </div>
+                            </div>
+                      
+                            <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                                <i class="text-indigo-500 far fa-clock"></i>
+                              <div class="mt-1.5 sm:mt-0">
+                                <p class="text-gray-500">WATCH TIME</p>
+                      
+                                <p class="font-medium">${movies.Runtime}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                </div>          
+    `)
+    .join("")
+
+}
+
 
 async function renderMovies() {
-    const movies = await fetch(`https://www.omdbapi.com/?s=avengers&apikey=fd7c8c4e`);
+    const movies = await fetch(`https://www.omdbapi.com/?s=${searchResults}&apikey=fd7c8c4e`);
     const moviesData = await movies.json();
     const moviesContainer = document.querySelector(".movies");
     moviesContainer.innerHTML = moviesData.Search.map((movies) => `
@@ -61,7 +128,7 @@ async function renderMovies() {
     `)
     .join("")
     console.log(moviesData.Search)
-    
+
 }
 
 renderMovies();
