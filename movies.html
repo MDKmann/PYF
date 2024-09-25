@@ -6,6 +6,7 @@
     <link rel="icon" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Results - Pick Your Flick</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="./moviesApp.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +24,7 @@
   </head>
   <body>
     <!-- HEADER SECTION -->
-    <header class="m-10">
+    <header class="m-2">
       <!-- NAV SECTION -->
       <nav>
         <ul class="justify-between">
@@ -35,7 +36,7 @@
             </li>
             <!-- NAV MAIN MENU CONTAINERS SECTION -->
             <li>
-              <ul class="flex justify-between bg-blue-400 shadow-md shadow-black rounded-xl outline-blue-200 outline">
+              <ul class="flex justify-between text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
                 <li class="mx-6">
                   <a href="#" class="p-2">
                    Quiz 
@@ -56,7 +57,7 @@
       </nav>
     </header>
      <!-- MAIN CONTENT -->
-     <main class="h-auto m-10 bg-blue-400 shadow-2xl shadow-black min-h-svh rounded-xl outline-blue-200 outline">
+     <main class="h-auto m-2 min-h-svh">
         <!-- HERO SECTION -->
         <section id="hero" class="flex flex-col justify-center">
           <!-- HERO TITLES CONTAINER -->
@@ -106,7 +107,7 @@
                   </svg>
                 </a>
               </div>
-              <div class="relative">
+              <div class="relative m-4 text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
                 <label for="Search" class="sr-only"> Search </label>
               
                 <input
@@ -131,27 +132,38 @@
         <!-- MOVIES MAIN SECTION -->
         <section id="movies__container">
             <div class="grid grid-cols-1 gap-4 m-4 lg:grid-cols-4 lg:gap-8 movies">
-                <div class="object-contain h-auto bg-gray-200 rounded-lg movieElement">
+                <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs  movieElement ">
+                  <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
+                              href="./movies.html">
+                              <i class="text-[0.75rem] leading-[0.75rem] p-1 far fa-circle-xmark text-white/85"></i>
+                            </a>
+                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-0.5 top-9 right-6 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
+                              href="./movies.html">
+                              <span class="p-1 text-xs text-white/85">
+                                PG-13
+                              </span>
+                            </a>
                     <a href="#" class="block p-4 rounded-lg shadow-sm shadow-indigo-100 ">
-                        <img
+                        <figure class=" rounded-lg shadow-[inset_10px_40px_30px_10px_rgba(225,15,15,0.9)]">
+                          <img
                           alt="Movie Poster"
                           src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-                          class="object-cover aspect-[29/43] h-56 rounded-md shadow-sm shadow-dark-400"
+                          class="object-cover aspect-[29/43] rounded-lg shadow-[0px_4px_8px_1px] shadow-black"
                         />
-                      
+                        </figure>
                         <div class="mt-2">
                           <dl>
-                            <div class="flex justify-between">
-                              <dt class="sr-only">Genre</dt>
-                              <dd class="text-xs text-gray-500">Action</dd>
-                              <dt class="sr-only">Year</dt>
-                              <dd class="text-xs text-gray-500">2017</dd>
-                            </div>
-                      
                             <div>
                               <dt class="sr-only">Movie Title</dt>
-                      
                               <dd class="text-sm font-medium">Guardians of the Galaxy Vol. 2</dd>
+                            </div>
+                            <div class="flex justify-between">
+                              <dt class="sr-only">Genre</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                Action
+                              </dd>
+                              <dt class="sr-only">Year</dt>
+                              <dd class="text-xs text-gray-500">2017</dd>
                             </div>
                           </dl>
                       
@@ -185,7 +197,7 @@
                           </div>
                         </div>
                       </a>
-                </div>
+                </div?>
                 <!-- <div class="h-auto bg-gray-200 rounded-lg">
                     <a href="#" class="block p-4 rounded-lg shadow-sm shadow-indigo-100">
                         <img
