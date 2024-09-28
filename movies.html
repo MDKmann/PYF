@@ -57,7 +57,7 @@
       </nav>
     </header>
      <!-- MAIN CONTENT -->
-     <main class="h-auto m-2 min-h-svh">
+     <main class="h-auto m-1 min-h-svh">
         <!-- HERO SECTION -->
         <section id="hero" class="flex flex-col justify-center">
           <!-- HERO TITLES CONTAINER -->
@@ -131,44 +131,60 @@
         </section>
         <!-- MOVIES MAIN SECTION -->
         <section id="movies__container">
-            <div class="grid grid-cols-1 gap-4 m-4 lg:grid-cols-4 lg:gap-8 movies">
+            <div class="grid grid-cols-1 gap-4 m-3 lg:grid-cols-4 lg:gap-8 movies">
                 <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs  movieElement ">
-                  <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
-                              href="./movies.html">
-                              <i class="text-[0.75rem] leading-[0.75rem] p-1 far fa-circle-xmark text-white/85"></i>
+                  <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6"
+                             >
+                             <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit mt-1 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs flex">
+                              <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
+                              8
+                            </span>
                             </a>
-                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-0.5 top-9 right-6 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
+                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-1 top-9 right-6 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
                               href="./movies.html">
                               <span class="p-1 text-xs text-white/85">
                                 PG-13
                               </span>
                             </a>
-                    <a href="#" class="block p-4 rounded-lg shadow-sm shadow-indigo-100 ">
-                        <figure class=" rounded-lg shadow-[inset_10px_40px_30px_10px_rgba(225,15,15,0.9)]">
+                    <a href="#" class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 ">
                           <img
                           alt="Movie Poster"
                           src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-                          class="object-cover aspect-[29/43] rounded-lg shadow-[0px_4px_8px_1px] shadow-black"
+                          class="  mx-auto rounded-lg w-[90%] shadow-[0px_4px_8px_1px] shadow-black"
                         />
-                        </figure>
-                        <div class="mt-2">
+                        <div class="m-4">
                           <dl>
-                            <div>
+                            <div class="flex items-center justify-between">
                               <dt class="sr-only">Movie Title</dt>
-                              <dd class="text-sm font-medium">Guardians of the Galaxy Vol. 2</dd>
+                              <dd class="text-sm font-medium text-center">Guardians of the Galaxy Vol. 2</dd>
+                              <dt class="sr-only">Year</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg ml-1 py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                2017
+                              </dd>
                             </div>
                             <div class="flex justify-between">
                               <dt class="sr-only">Genre</dt>
-                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg ml-1  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
                                 Action
                               </dd>
-                              <dt class="sr-only">Year</dt>
-                              <dd class="text-xs text-gray-500">2017</dd>
+                              
                             </div>
                           </dl>
                       
                           <div class="flex items-center justify-center gap-4 mt-4 text-xs">
-                            <div class="h-full text-center sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                            <dt class="sr-only">Genre</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                Action
+                              </dd>
+                              <dt class="sr-only">Genre</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                136 Mins
+                              </dd>
+                              <dt class="sr-only">Genre</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                2017
+                              </dd>
+                            <!-- <div class="h-full text-center sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
                                 <i class="text-indigo-500 align-top far fa-hand-point-down"></i>
                               <div class="mt-1.5 sm:mt-0">
                                 <p class="text-gray-500">RATED</p>
@@ -193,7 +209,7 @@
                       
                                 <p class="font-medium">136 min</p>
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </a>

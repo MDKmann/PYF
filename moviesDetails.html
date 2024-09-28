@@ -6,37 +6,11 @@
     <link rel="icon" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Results - Pick Your Flick</title>
-    <script src="./moviesApp.js"></script>
+    <script src="./movieDetails.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        content: ["./src/**/*.{html,js}"],
-        theme: {
-          extend: {
-            textShadow: {
-              sm: '0 1px 2px var(--tw-shadow-color)',
-              DEFAULT: '0 2px 4px var(--tw-shadow-color)',
-              lg: '0 8px 16px var(--tw-shadow-color)',
-            },
-          },
-        },
-        plugins: [
-          plugin(function ({ matchUtilities, theme }) {
-            matchUtilities(
-              {
-                'text-shadow': (value) => ({
-                  textShadow: value,
-                }),
-              },
-              { values: theme('textShadow') }
-            )
-          }),
-        ],
-      };
-    </script>
+    <script> src="./tailwind.config.js" </script>
     <script
       src="https://kit.fontawesome.com/d758225057.js"
       crossorigin="anonymous"
