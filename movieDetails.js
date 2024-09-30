@@ -1,13 +1,10 @@
-console.log(localStorage.getItem("fetchedMovies"));
+let movieString = localStorage.getItem("fetchedMovie");
+let movieObject = JSON.parse(movieString);
 
-async function onClickChange (event) {
-  console.log(window.location)
-  debugger
-  const movieDetails = await fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=fd7c8c4e`);
-      const movieDetailsData = await movieDetails.json();
-    const movieCardContainer = document.querySelector(".movie__card");
-    movieCardContainer.innerHTML = movieDetailsData.map(movie__card => `
-                  <div class="relative overflow-hidden text-white transition duration-500 ease-in-out transform movie-item movie__card" data-movie-id="438631">
+function updateMovieDetails() {
+    const movieCardContainer = document.getElementById("movie-container");
+    movieCardContainer.innerHTML = `
+            <div class="relative overflow-hidden text-white transition duration-500 ease-in-out transform movie-item" data-movie-id="438631">
             <div class="absolute inset-0 z-10 transition duration-300 ease-in-out transform translate-y-10 bg-gradient-to-t from-black via-gray-900 to-transparent"></div>
             <div class="shadow-[inset_0px_40px_30px_10px_rgba(15,15,15,0.9)] relative z-10 px-4 pt-16 space-y-6 cursor-pointer group movie_info" data-lity="">
                 <div class="w-full poster__info align-self-end">
@@ -21,7 +18,7 @@ async function onClickChange (event) {
                             <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-0.5 top-1 right-3 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
                               href="./movies.html">
                               <span class="p-1 text-xs text-white/85">
-                                ${movie__card.Rating}
+                                ${movieObject.Rated}
                               </span>
                             </a>
                             <div class="relative flex items-center flex-shrink-0 p-1 text-center text-white bg-red-500 rounded-full w-min group hover:bg-red-700" data-unsp-sanitized="clean">
@@ -87,9 +84,7 @@ async function onClickChange (event) {
                 </a>
             </div>
           </div>
-
-    `)
-    .join("")
- console.log(movieDetailsData)
+          `
 }
 
+document.addEventListener("DOMContentLoaded", updateMovieDetails);
