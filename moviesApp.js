@@ -1,8 +1,32 @@
 // document.getElementById("search").onchange = function() {onSearchChange(event)};
 
 let movieObject = {};
-
-
+let heroSwap = `<section id="movies__container">
+                <div class="relative m-4 text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2">
+                  <label for="Search" class="sr-only"> Search </label>
+              
+                  <input
+                
+                  type="text"
+                  id="search"
+                  placeholder="What would you like to watch . . ?"
+                  class="w-full rounded-md bg-white/30 ring-2 ring-white/5 backdrop-blur-x py-2.5 pe-10 text-center sm:text-sm"
+                  onchange="onSearchChange(event)"
+                   />
+              
+                <span class="absolute inset-y-0 grid w-10 end-0 place-content-center">
+                  <button type="button" class="text-gray-600 hover:text-gray-700">
+                    <span class="sr-only">Search</span>
+              
+                    <span class="p-1 rounded-full outline">
+                      <i aria-hidden="true" class="fas fa-wand-sparkles"></i>
+                    </span>
+                  </button>
+                </span>
+              </div>
+                  <div class="grid grid-cols-1 gap-4 m-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 movies">
+                  </div>
+                </section>`;
 
 function showMovieDetails(imdbID) {
   let fetchedMovie = movieObject[imdbID];
@@ -39,9 +63,10 @@ async function onSearchChange(event) {
       }),  
     )
    
+    document.getElementById("hero").innerHTML = heroSwap;
 
     const moviesContainer = document.querySelector(".movies");
-    moviesContainer.innerHTML = responses.map(response => {
+      moviesContainer.innerHTML = responses.map(response => {
       const movie = response.value;
       const imdbID = movie.imdbID;
         return `
@@ -59,7 +84,7 @@ async function onSearchChange(event) {
                               ${movie.Rated}
                               </span>
                             </a>
-                    <a href="#" class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 ">
+                    <a href="#" class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 h-full">
                           <img
                           alt="Movie Poster"
                           src="${movie.Poster}"
