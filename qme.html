@@ -29,44 +29,47 @@
 </head>
 
 <body class="px-4 antialiased bg-black md:px-0">
-    <header>
-        <div class="max-w-screen-xl px-4 py-10 mx-auto sm:px-7">
-            <div class="flex flex-col items-center md:flex-row">
-                <a data-aos="fade-right" href="/qme.html" class="flex items-center gap-2">
-                    <img src="./imgs/logoqme.png" class="max-w-[50px] w-full" alt="">
+    <header
+    class="fixed inset-x-0 top-0 z-30 max-w-screen-md py-3 mx-auto border border-gray-800 shadow sm:w-1/2 bg-dark-800/50 backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+    <div class="px-4">
+        <div class="flex items-center justify-between">
+            <div class="flex shrink-0">
+                <a aria-current="page" class="flex items-center" href="/">
+                    <img class="w-auto h-7" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="">
+                    <p class="sr-only">Website Title</p>
                 </a>
-                <nav data-aos="fade-left" class="flex items-center mx-auto mt-10 md:mr-0 md:ml-auto md:mt-0">
-                    <ul class="flex gap-5 text-gray-600">
-                        <li>
-                            <a href="" class="hover:underline">prices</a>
-                        </li>
-                        <li>
-                            <a href="" class="hover:underline">FAQ</a>
-                        </li>
-                    </ul>
-                    <a href="/qme-login.html"
-                        class="px-6 py-2 ml-4 font-bold text-blue-600 transition ease-in-out delay-150 border-2 border-blue-600 rounded-full md:ml-10 hover:bg-blue-600 hover:text-white">
-                        Log In
-                    </a>
-                </nav>
+            </div>
+            <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
+                <a aria-current="page"
+                    class="inline-block px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 rounded-lg hover:bg-gray-100 hover:text-gray-900"
+                    href="#">How it works</a>
+                <a class="inline-block px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 rounded-lg hover:bg-gray-100 hover:text-gray-900"
+                    href="#">Pricing</a>
+            </div>
+            <div class="flex items-center justify-end gap-3">
+                <a class="items-center justify-center hidden px-3 py-2 text-sm font-semibold text-gray-900 transition-all duration-150 bg-white shadow-sm rounded-xl ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:inline-flex"
+                    href="/login">Sign in</a>
+                <a class="inline-flex items-center justify-center px-3 py-2 text-sm font-semibold text-white transition-all duration-150 bg-blue-600 shadow-sm rounded-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                    href="/login">Login</a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
     <section id="hero">
-        <div data-aos="fade-down" class="flex flex-col max-w-screen-xl px-4 py-20 mx-auto text-center sm:px-7">
+        <div data-aos="fade-down" class="flex flex-col max-w-screen-xl px-4 py-20 mx-auto mt-10 text-center sm:px-7">
             <h1 class="pb-2 text-3xl md:text-6xl font-bold max-w-[900px] mx-auto text-slate-700"> Tired of Doomscrolling through Countless Movie Options?</h1>
             <p class="pb-10 text-lg text-gray-600 max-w-[600px] mx-auto">
                 Let us help you pick your next flick quickly, and curated just for you.
             </p>
             <div class="flex items-center gap-0 mx-auto md:gap-10">
-                <div class="hidden md:block ml-[-96px]">
+                <div class="hidden">
                     <img src="./imgs/home-arrow.svg" alt="">
                 </div>
                 <a href="/"
                     class="px-10 py-2 text-xl font-bold text-white text-blue-600 transition ease-in-out delay-150 bg-blue-600 border-2 border-blue-600 rounded-full hover:bg-white hover:text-blue-600">Let's
                     start</a>
             </div>
-            <div class="relative m-4 text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2">
+            <div class="relative m-4 text-[0.75rem] leading-[0.75rem] w-full sm:w-2/3 lg:w-1/2 mx-auto rounded-lg py-1 px-2">
                 <label for="Search" class="sr-only"> Search </label>
               
                 <input
@@ -74,7 +77,7 @@
                   type="text"
                   id="search"
                   placeholder="What would you like to watch . . ?"
-                  class="w-full rounded-md bg-white/30 ring-2 ring-white/5 backdrop-blur-x py-2.5 pe-10 text-center sm:text-sm"
+                  class="w-full rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-x py-2.5 px-10 text-center  sm:text-sm"
                   onchange="onSearchChange(event)"
                 />
               
@@ -112,7 +115,7 @@
                 class="relative px-6 pt-16 overflow-hidden bg-blue-600 shadow-2xl isolate sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
             
                 <div class="max-w-md mx-auto text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Enhance your efficiency.<br>Start using APP today.</h2>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Enhance your efficiency.<br>Start using PYF today.</h2>
                     <p class="mt-6 text-lg leading-8 text-gray-300">Ac euismod vel sit maecenas id pellentesque eu sed
                         consectetur. Malesuada adipiscing sagittis vel nulla.</p>
                     <div class="flex items-center justify-center mt-10 gap-x-6 lg:justify-start">
@@ -125,7 +128,7 @@
                 </div>
                 <div class="relative mt-24 h-80">
                     <img class="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                        src="./imgs/hero.png"
+                        src="./assets/images/rPlexPoster.jpg"
                         alt="App screenshot" width="1824" height="1080">
                 </div>
             </div>
