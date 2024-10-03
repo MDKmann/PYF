@@ -1,120 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- BROWSER TITLE ICON -->
-    <link rel="icon" href="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Results - Pick Your Flick</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="./moviesApp.js"></script>
-    <link rel="stylesheet" href="./style.css" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYF: Pick Your Flick</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/256-mac.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        content: ["./src/**/*.{html,js}"],
-        theme: {},
-      };
-    </script>
-    <script
-      src="https://kit.fontawesome.com/d758225057.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <!-- HEADER SECTION -->
-    <header class="m-4">
-      <!-- NAV SECTION -->
-      <nav>
-        <ul class="justify-between">
-            <!-- NAV LOGO/HOME SECTION -->
-            <li class="mx-6">
-              <a href="#">
-                <img src="" class="p-2" alt="LOGO">
-              </a>
-            </li>
-            <!-- NAV MAIN MENU CONTAINERS SECTION -->
-            <li>
-              <ul class="flex justify-between text-[0.75rem] leading-[0.75rem] rounded-lg  py-3 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                <li class="mx-6">
-                  <a href="#" class="p-2">
-                   Quiz 
-                  </a>
-                </li>
-                <li class="mx-6">
-                  <a href="#" class="p-2">
-                    DIY
-                  </a>
-                </li>
-                <li class="mx-6">
-                  <a href="#" class="p-2">
-                    Wildcard
-                  </a>
-                </li>
-              </ul>
-            </li>
-      </nav>
-    </header>
-     <!-- MAIN CONTENT -->
-     <main class="h-auto m-1 min-h-svh">
-        <!-- HERO SECTION -->
-        <section id="hero" class="flex flex-col justify-center">
-          <!-- HERO TITLES CONTAINER -->
-          <div class="m-3 text-center">
-            <h1 class="p-2 text-2xl hero__title">
-              Pick Your Flick
-            </h1>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./moviesApp.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body,
+        html {
+            scroll-behavior: smooth !important;
+        }
+    </style>
+</head>
+
+<body class="px-4 antialiased bg-black md:px-0">
+    <header
+    class="fixed inset-x-0 top-0 z-30 max-w-screen-md py-3 mx-auto border border-gray-800 shadow sm:w-3/5 lg:w-1/2 bg-dark-800/50 backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+    <div class="px-4">
+        <div class="flex items-center justify-between">
+            <div class="flex shrink-0">
+                <a aria-current="page" class="flex items-center" href="./Movies.html">
+                    <img class="w-auto h-9" src="./assets/images/256-mac.png" alt="">
+                    <p class="sr-only">Pick Your Flick</p>
+                </a>
+            </div>
+            <div class="hidden text-white md:flex md:items-center md:justify-center md:gap-5">
+                <h2>Pick Your Flick</h2>
+            </div>
+            <div class="flex items-center justify-end gap-3">
+                <a class="inline-flex items-center justify-center px-3 py-2 text-sm font-semibold text-white transition-all duration-150 bg-blue-600 shadow-sm rounded-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                    href="/login">Login</a>
+            </div>
         </div>
-            <div class="inline-flex justify-center gap-1">
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center text-gray-900 bg-white border border-gray-100 rounded size-8 rtl:rotate-180"
-                >
-                  <span class="sr-only">Prev Page</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-3" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </a>
-              
-                <div>
-                  <label for="PaginationPage" class="sr-only">Page</label>
-              
-                  <input
-                    type="number"
-                    class="h-8 w-12 rounded border border-gray-100 bg-white p-0 text-center text-xs font-medium text-gray-900 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
-                    min="1"
-                    value="2"
-                    id="PaginationPage"
-                  />
+    </div>
+</header>
+    <section id="hero">
+        <div data-aos="fade-down" class="flex flex-col max-w-screen-xl px-4 py-20 mx-auto mt-10 text-center sm:px-7">
+            <h1 class="pb-2 text-3xl md:text-6xl font-bold max-w-[900px] mx-auto text-slate-700"> Tired of Doomscrolling through Countless Movie Options?</h1>
+            <p class="pb-10 text-lg text-gray-600 max-w-[600px] mx-auto">
+                Let us help you pick your next flick quickly, and curated just for you.
+            </p>
+            <div class="flex items-center gap-0 mx-auto md:gap-10">
+                <div class="hidden">
+                    <img src="./imgs/home-arrow.svg" alt="">
                 </div>
-              
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center text-gray-900 bg-white border border-gray-100 rounded size-8 rtl:rotate-180"
-                >
-                  <span class="sr-only">Next Page</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-3" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </div>
-              <div class="relative m-4 text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                <a href="/"
+                    class="px-10 py-2 text-xl font-bold text-white text-blue-600 transition ease-in-out delay-150 bg-blue-600 border-2 border-blue-600 rounded-full hover:bg-white hover:text-blue-600">Let's
+                    start</a>
+            </div>
+            <div class="relative m-4 text-[0.75rem] leading-[0.75rem] w-full sm:w-2/3 lg:w-1/2 mx-auto rounded-lg py-1 px-2">
                 <label for="Search" class="sr-only"> Search </label>
               
                 <input
+                
                   type="text"
                   id="search"
-                  placeholder="Search for..."
-                  class="w-full rounded-md border-gray-300 py-2.5 pe-10 shadow-sm sm:text-sm"
+                  placeholder="What would you like to watch . . ?"
+                  class="w-full rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-x py-2.5 px-10 text-center  sm:text-sm"
                   onchange="onSearchChange(event)"
                 />
               
@@ -128,64 +85,80 @@
                   </button>
                 </span>
               </div>
-        </section>
-        <!-- MOVIES MAIN SECTION -->
-        <section id="movies__container">
-            <div class="grid grid-cols-1 gap-4 m-3 lg:grid-cols-4 lg:gap-8 movies">
-                <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs  movieElement ">
-                  <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6"
-                             >
-                             <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit mt-1 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs flex">
-                              <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
-                              8
-                            </span>
-                            </a>
-                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-1 top-9 right-6 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
-                              href="./movies.html">
-                              <span class="p-1 text-xs text-white/85">
-                                PG-13
-                              </span>
-                            </a>
-                    <a href="#" class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 ">
-                          <img
-                          alt="Movie Poster"
-                          src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-                          class="  mx-auto rounded-lg w-[90%] shadow-[0px_4px_8px_1px] shadow-black"
-                        />
-                        <div class="m-4">
-                          <dl>
-                            <div class="flex items-center justify-between">
-                              <dt class="sr-only">Movie Title</dt>
-                              <dd class="text-sm font-medium text-center">Guardians of the Galaxy Vol. 2</dd>
-                              <dt class="sr-only">Year</dt>
-                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg ml-1 py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                                2017
-                              </dd>
-                            </div>
-                          </dl>
-                      
-                          <div class="flex items-center justify-center gap-4 mt-4 text-xs">
-                            <dt class="sr-only">Genre</dt>
-                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                                Action
-                              </dd>
-                              <dt class="sr-only">Genre</dt>
-                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                                136 Mins
-                              </dd>
-                              <dt class="sr-only">Genre</dt>
-                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                                2017
-                              </dd>
-                          </div>
-                        </div>
-                      </a>
+            <div
+                class="flex flex-col sm:flex-row gap-4 items-center bg-slate-100 rounded p-4 mx-auto max-w-[300px] sm:max-w-[400px] w-full mt-10">
+                <div>
+                    <img src="./imgs/google.png" class="max-w-[120px]" alt="">
                 </div>
-              </div>
-            </div>    
-        </section>
-      </main>
-    <!-- FOOTER SECTION -->
-    <footer></footer>
-  </body>
+                <div class="flex gap-1">
+                    <i class="text-yellow-400 bi bi-star-fill"></i>
+                    <i class="text-yellow-400 bi bi-star-fill"></i>
+                    <i class="text-yellow-400 bi bi-star-fill"></i>
+                    <i class="text-yellow-400 bi bi-star-fill"></i>
+                    <i class="text-yellow-400 bi bi-star-fill"></i>
+                </div>
+                <span class="text-xs text-gray-600">
+                    4.8/5 (45k reviews)
+                </span>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="py-20 mx-auto max-w-7xl lg:px-8">
+            <div
+                class="relative px-6 pt-16 overflow-hidden bg-blue-600 shadow-2xl isolate sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+            
+                <div class="max-w-md mx-auto text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Enhance your efficiency.<br>Start using PYF today.</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-300">Ac euismod vel sit maecenas id pellentesque eu sed
+                        consectetur. Malesuada adipiscing sagittis vel nulla.</p>
+                    <div class="flex items-center justify-center mt-10 gap-x-6 lg:justify-start">
+                        <a href="#"
+                            class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Get
+                            started</a>
+                        <a href="#" class="text-sm font-semibold leading-6 text-white">Learn more <span
+                                aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+                <div class="relative mt-24 h-80">
+                    <img class="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                        src="./assets/images/rPlexPoster.jpg"
+                        alt="App screenshot" width="1824" height="1080">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="flex flex-col items-center justify-between max-w-screen-xl px-4 py-20 mx-auto md:flex-row sm:px-7">
+            <p class="w-full text-sm text-center text-gray-700">
+                © Copyright 2024 App. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <div id="loading-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 none">
+
+        <svg class="w-8 h-8 mr-3 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+        </svg>
+    
+        <span class="text-3xl font-bold text-white">Loading...</span>
+    
+    </div>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".close-cookie").on('click', function () {
+                jQuery("#cookies").hide()
+            })
+        })
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
 </html>

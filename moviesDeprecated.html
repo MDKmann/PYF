@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- BROWSER TITLE ICON -->
+    <link rel="icon" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results - Pick Your Flick</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./moviesApp.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        content: ["./src/**/*.{html,js}"],
+        theme: {},
+      };
+    </script>
+    <script
+      src="https://kit.fontawesome.com/d758225057.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- HEADER SECTION -->
+    <header class="m-4">
+      <!-- NAV SECTION -->
+      <nav>
+        <ul class="justify-between">
+            <!-- NAV LOGO/HOME SECTION -->
+            <li class="mx-6">
+              <a href="#">
+                <img src="" class="p-2" alt="LOGO">
+              </a>
+            </li>
+            <!-- NAV MAIN MENU CONTAINERS SECTION -->
+            <li>
+              <ul class="flex justify-between text-[0.75rem] leading-[0.75rem] rounded-lg  py-3 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                <li class="mx-6">
+                  <a href="#" class="p-2">
+                   Quiz 
+                  </a>
+                </li>
+                <li class="mx-6">
+                  <a href="#" class="p-2">
+                    DIY
+                  </a>
+                </li>
+                <li class="mx-6">
+                  <a href="#" class="p-2">
+                    Wildcard
+                  </a>
+                </li>
+              </ul>
+            </li>
+      </nav>
+    </header>
+     <!-- MAIN CONTENT -->
+     <main class="h-auto m-1 min-h-svh">
+        <!-- HERO SECTION -->
+        <section id="hero" class="flex flex-col justify-center">
+          <!-- HERO TITLES CONTAINER -->
+          <div class="m-3 text-center">
+            <h1 class="p-2 text-2xl hero__title">
+              Pick Your Flick
+            </h1>
+        </div>
+            <div class="inline-flex justify-center gap-1">
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center text-gray-900 bg-white border border-gray-100 rounded size-8 rtl:rotate-180"
+                >
+                  <span class="sr-only">Prev Page</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              
+                <div>
+                  <label for="PaginationPage" class="sr-only">Page</label>
+              
+                  <input
+                    type="number"
+                    class="h-8 w-12 rounded border border-gray-100 bg-white p-0 text-center text-xs font-medium text-gray-900 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+                    min="1"
+                    value="2"
+                    id="PaginationPage"
+                  />
+                </div>
+              
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center text-gray-900 bg-white border border-gray-100 rounded size-8 rtl:rotate-180"
+                >
+                  <span class="sr-only">Next Page</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div class="relative m-4 text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                <label for="Search" class="sr-only"> Search </label>
+              
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="Search for..."
+                  class="w-full rounded-md border-gray-300 py-2.5 pe-10 shadow-sm sm:text-sm"
+                  onchange="onSearchChange(event)"
+                />
+              
+                <span class="absolute inset-y-0 grid w-10 end-0 place-content-center">
+                  <button type="button" class="text-gray-600 hover:text-gray-700">
+                    <span class="sr-only">Search</span>
+              
+                    <span class="p-1 rounded-full outline">
+                      <i aria-hidden="true" class="fas fa-wand-sparkles"></i>
+                    </span>
+                  </button>
+                </span>
+              </div>
+        </section>
+        <!-- MOVIES MAIN SECTION -->
+        <section id="movies__container">
+            <div class="grid grid-cols-1 gap-4 m-3 lg:grid-cols-4 lg:gap-8 movies">
+                <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs  movieElement ">
+                  <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6"
+                             >
+                             <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit mt-1 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs flex">
+                              <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
+                              8
+                            </span>
+                            </a>
+                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-1 top-9 right-6 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
+                              href="./movies.html">
+                              <span class="p-1 text-xs text-white/85">
+                                PG-13
+                              </span>
+                            </a>
+                    <a href="#" class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 ">
+                          <img
+                          alt="Movie Poster"
+                          src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+                          class="  mx-auto rounded-lg w-[90%] shadow-[0px_4px_8px_1px] shadow-black"
+                        />
+                        <div class="m-4">
+                          <dl>
+                            <div class="flex items-center justify-between">
+                              <dt class="sr-only">Movie Title</dt>
+                              <dd class="text-sm font-medium text-center">Guardians of the Galaxy Vol. 2</dd>
+                              <dt class="sr-only">Year</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg ml-1 py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                2017
+                              </dd>
+                            </div>
+                          </dl>
+                      
+                          <div class="flex items-center justify-center gap-4 mt-4 text-xs">
+                            <dt class="sr-only">Genre</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                Action
+                              </dd>
+                              <dt class="sr-only">Genre</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                136 Mins
+                              </dd>
+                              <dt class="sr-only">Genre</dt>
+                              <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                                2017
+                              </dd>
+                          </div>
+                        </div>
+                      </a>
+                </div>
+              </div>
+            </div>    
+        </section>
+      </main>
+    <!-- FOOTER SECTION -->
+    <footer></footer>
+  </body>
+</html>

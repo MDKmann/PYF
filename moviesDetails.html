@@ -18,14 +18,14 @@
   </head>
   <body class="bg-black">
      <!-- MAIN CONTENT -->
-        <section id="movie-container">
-          <img class="inset-0 hidden h-full h-dvh w-dvw -z blur-lg"  id="poster" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg"/>
+        <section id="movie-container" >
+          <img class="absolute inset-0 h-full h-dvh w-dvw -z blur-lg"  id="posterBG" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg"/>
           <div class="relative overflow-hidden text-white transition duration-500 ease-in-out transform movie-item" data-movie-id="438631">
             <div class="absolute inset-0 z-10 transition duration-300 ease-in-out transform translate-y-10 bg-gradient-to-t from-black via-gray-900 to-transparent"></div>
-            <div class="shadow-[inset_0px_40px_30px_10px_rgba(15,15,15,0.9)] relative z-10 px-4 pt-16 space-y-6 cursor-pointer group movie_info" data-lity="">
-                <div class="w-full poster__info align-self-end">
-                    <div class="h-32"></div>
-                    <div class="space-y-6 detail_info">
+            <div class="shadow-[inset_0px_40px_30px_10px_rgba(15,15,15,0.9)]  relative z-10 px-4 pt-16 space-y-6 cursor-pointer group movie_info" data-lity="">
+                <div class="sm:grid-cols-2 sm:grid-rows-1 sm:gap-4 sm:grid poster__info align-self-end">
+                    <div class="h-32 sm:hidden"></div>
+                    <div class="col-start-2 space-y-6 detail_info">
                         <div class="flex flex-col space-y-2 inner">
                             <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-3 left-3  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
                               onclick="backToSearch(event)">
@@ -86,9 +86,9 @@
                             </p>
                         </div>
                     </div>
+                    <img class="justify-start col-start-1 align-top" id="posterMain" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg" style="filter: grayscale(0);" />
                 </div>
             </div>
-            <img class="absolute inset-0 w-full sm:hidden" id="poster" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg" style="filter: grayscale(0);" />
             <div class="relative z-10 flex flex-row pb-10 space-x-4 poster__footer">
                 <a
                     class="flex items-center px-4 py-2 mx-auto text-white bg-red-500 rounded-full hover:bg-red-700"

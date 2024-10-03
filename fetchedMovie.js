@@ -32,8 +32,8 @@ function updateMovieDetails() {
      document.getElementById("date").textContent = movieObject.Year;
      document.getElementById("runtime").textContent = fixTime(movieObject.Runtime);
      document.getElementById("plot").textContent = movieObject.Plot;
-     document.getElementById("poster").src = movieObject.Poster;
-     
+     document.getElementById("posterMain").src = movieObject.Poster;
+     document.getElementById("posterBG").src = movieObject.Poster;
 }
 
 
