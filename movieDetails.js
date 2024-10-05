@@ -17,7 +17,7 @@ function updateMovieDetails() {
                             </a>
                             <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-0.5 top-1 right-3 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
                               href="./movies.html">
-                              <span class="p-1 text-xs text-white/85">
+                              <span class="p-1 text-xs font-bold text-black/85">
                                 ${movieObject.Rated}
                               </span>
                             </a>

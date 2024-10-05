@@ -91,14 +91,14 @@ async function onSearchChange(event, previousSearch = null) {
                 <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs movie">
                   <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6"
                              >
-                             <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit mt-1 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs flex">
+                             <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit mt-1 font-bold text-black/85 bg-gray-300/50 ring-2 ring-white/5 backdrop-blur-xs flex">
                               <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
                               ${movie.imdbRating}
                             </span>
                             </a>
-                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-1 top-9 right-6 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
+                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-1 top-9 right-6 bg-gray-300/50 ring-3 ring-white/5 backdrop-blur-xs"
                               href="./movies.html">
-                              <span class="p-1 text-xs text-white/85">
+                              <span class="p-1 text-xs font-bold text-black/85">
                               ${movie.Rated}
                               </span>
                             </a>

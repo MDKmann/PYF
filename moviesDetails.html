@@ -19,13 +19,14 @@
   <body class="bg-black">
      <!-- MAIN CONTENT -->
         <section id="movie-container" >
-          <img class="absolute inset-0 h-full h-dvh w-dvw -z blur-lg"  id="posterBG" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg"/>
-          <div class="relative overflow-hidden text-white transition duration-500 ease-in-out transform movie-item" data-movie-id="438631">
-            <div class="absolute inset-0 z-10 transition duration-300 ease-in-out transform translate-y-10 bg-gradient-to-t from-black via-gray-900 to-transparent"></div>
-            <div class="shadow-[inset_0px_40px_30px_10px_rgba(15,15,15,0.9)]  relative z-10 px-4 pt-16 space-y-6 cursor-pointer group movie_info" data-lity="">
-                <div class="sm:grid-cols-2 sm:grid-rows-1 sm:gap-4 sm:grid poster__info align-self-end">
+          <img class="absolute inset-0 w-full h-auto sm:h-dvh sm:w-dvw -z sm:blur-lg"  id="posterBG" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg"/>
+          <div class="relative h-screen overflow-hidden text-white transition duration-500 ease-in-out transform movie-item" data-movie-id="438631">
+            <div class="absolute inset-0 z-10 transition duration-300 ease-in-out transform translate-y-10 sm:hidden bg-gradient-to-t from-black via-gray-900 to-transparent"></div>
+            <div class="shadow-[inset_0px_40px_30px_10px_rgba(15,15,15,0.9)] sm:shadow-none   relative z-10 px-4 pt-16 space-y-6 cursor-pointer group movie_info" data-lity="">
+              <h3 id="title" class="hidden text-2xl font-bold text-center text-white sm:flex text-shadow-lg shadow-white" data-unsp-sanitized="clean">Guardians of the Galaxy Vol. 2</h3>  
+              <div class="flex flex-row-reverse poster__info align-self-end">
                     <div class="h-32 sm:hidden"></div>
-                    <div class="col-start-2 space-y-6 detail_info">
+                    <div class="ml-6 space-y-6 max-w-1/2 detail_info">
                         <div class="flex flex-col space-y-2 inner">
                             <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-3 left-3  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs"
                               onclick="backToSearch(event)">
@@ -37,6 +38,7 @@
                                 PG-13
                               </span>
                             </a>
+                            
                             <div class="relative flex items-center flex-shrink-0 p-1 text-center text-white bg-red-500 rounded-full w-min group hover:bg-red-700" data-unsp-sanitized="clean">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM9.555 7.168A1 1 0 0 0 8 8v4a1 1 0 0 0 1.555.832l3-2a1 1 0 0 0 0-1.664l-3-2z" clip-rule="evenodd"></path>
@@ -50,7 +52,7 @@
                                 </a>
                               </div> 
                             <div class="flex items-center">
-                              <h3 id="title" class="text-2xl font-bold text-white text-shadow-lg shadow-white" data-unsp-sanitized="clean">Guardians of the Galaxy Vol. 2</h3>
+                              <h3 id="title" class="text-2xl font-bold text-white sm:hidden text-shadow-lg shadow-white" data-unsp-sanitized="clean">Guardians of the Galaxy Vol. 2</h3>
                               <span class="text-[0.95rem] leading-[0.95rem] font-semibold rounded-lg  py-1 px-2 h-fit mt-0.5 ml-2 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs flex">
                                 <i class="pr-1 text-yellow-400 fas fa-star"></i>
                                 <span id="imdb">8</span>
@@ -68,7 +70,7 @@
                               </span>
                             </div>
                         </div>
-                        <div class="flex flex-row justify-between datos">
+                        <div class="flex flex-row justify-between sm:hidden datos">
                             <div class="flex flex-col datos_col">
                                 <div class="text-sm text-gray-400">Year:</div>
                                 <div id="date" class="release">01 Aug 2014</div>
@@ -78,7 +80,7 @@
                               <div id="runtime" class="release">121 min</div>
                             </div>
                         </div>
-                        <div class="flex flex-col overview">
+                        <div class="flex flex-col overview sm:hidden">
                             <div class="flex flex-col"></div>
                             <div class="mb-2 text-xs text-gray-400">Plot:</div>
                             <p id="plot" class="mb-6 text-xs text-gray-100">
@@ -86,9 +88,28 @@
                             </p>
                         </div>
                     </div>
-                    <img class="justify-start col-start-1 align-top" id="posterMain" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg" style="filter: grayscale(0);" />
+                    <img class="hidden w-1/2 sm:block" id="posterMain" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg" style="filter: grayscale(0);" />
                 </div>
             </div>
+            <div class="flex flex-col items-center justify-center hidden mt-6 1/4 max-w-1/2">
+              <div class="flex justify-between w-2/3">
+                <div class="flex flex-col datos_col">
+                    <div class="text-sm text-gray-400">Year:</div>
+                    <div id="date" class="release">01 Aug 2014</div>
+                </div>
+                <div class="flex flex-col datos_col">
+                  <div class="text-sm text-gray-400">Runtime:</div>
+                  <div id="runtime" class="release">121 min</div>
+                </div>
+              </div>
+              <div class="flex flex-col w-2/3 overview">
+                <div class="flex flex-col"></div>
+                <div class="mb-2 text-xs text-gray-400 ">Plot:</div>
+                <p id="plot" class="mb-6 text-xs text-gray-100 max-w-2/3">
+                  A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.
+                </p>
+              </div>
+          </div>
             <div class="relative z-10 flex flex-row pb-10 space-x-4 poster__footer">
                 <a
                     class="flex items-center px-4 py-2 mx-auto text-white bg-red-500 rounded-full hover:bg-red-700"
@@ -100,6 +121,9 @@
                 </a>
             </div>
           </div>
+        </section>
+        <section id="movie-container__large">
+          
         </section>
       </main>
     <!-- FOOTER SECTION -->
