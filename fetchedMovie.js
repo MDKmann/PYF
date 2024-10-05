@@ -20,6 +20,13 @@ function youtubeSearch(movieTitle) {
 }
  youtubeSearch();
 
+ function watchMovieSearch(movieTitle) {
+    movieTitle = movieObject.Title;
+    let watchTitle = movieTitle.split(" ").join("+");
+    return `https://www.google.com/search?q=watch+${watchTitle}`;
+}
+watchMovieSearch();
+
 
 function updateMovieDetails() {
      document.getElementById("rating").textContent = movieObject.Rated;
@@ -34,6 +41,7 @@ function updateMovieDetails() {
      document.getElementById("plot").textContent = movieObject.Plot;
      document.getElementById("posterMain").src = movieObject.Poster;
      document.getElementById("posterBG").src = movieObject.Poster;
+     document.getElementById("watch").href = watchMovieSearch(movieObject.Title);
 }
 
 
