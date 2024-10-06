@@ -74,14 +74,22 @@
               <label class="block py-2 mb-2 font-bold text-blue-300" for="Search">
                 Search for any movie below
               </label>
-              <input
+              <button
+              type="submit"
+              onclick="onSearchChange(event)"
+              >
+              <i class="fas fa-search"></i>
+                <input
                 class="p-3 leading-tight text-center text-gray-700 transition duration-300 ease-in-out transform border rounded shadow appearance-none focus:ring hover:scale-105"
                 id="search"
                 type="text"
                 placeholder="Search by title"
                 onchange="onSearchChange(event)"
+                required
+                
               />
-            </div>
+              </button>
+              </div>
 
             <div class="flex items-center justify-between pt-4">
              <a href="./comingSoon.html">
