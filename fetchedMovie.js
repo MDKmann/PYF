@@ -30,7 +30,6 @@ watchMovieSearch();
 
 function updateMovieDetails() {
      document.getElementById("rating").textContent = movieObject.Rated;
-    //  document.getElementById("trailer").href = youtubeSearch(movieObject.Title);
      document.getElementById("title").textContent = movieObject.Title;
      document.getElementById("imdb").textContent = movieObject.imdbRating;
      document.getElementById("genre").textContent = splitGenres(movieObject.Genre);
@@ -41,6 +40,7 @@ function updateMovieDetails() {
      document.getElementById("plot").textContent = movieObject.Plot;
      document.getElementById("posterMain").src = movieObject.Poster;
      document.getElementById("watch").href = watchMovieSearch(movieObject.Title);
+     //  document.getElementById("trailer").href = youtubeSearch(movieObject.Title);
 }
 
 

@@ -17,85 +17,80 @@
     ></script>
   </head>
   <body class="p-2 leading-normal tracking-normal text-white bg-fixed bg-cover sm:p-6 sm:rounded-2xl sm:m-6 sm:backdrop-blur-xl" style="background-image: url('./assets/images/rPlexPoster.jpg');">
-     <!-- MAIN CONTENT -->
-        <section id="movie-container" class="px-2 py-1 sm:m-4 max-w-7xl rounded-2xl h-dvh sm:m-6 backdrop-blur-xl">
-          <!-- MOVIE WRAPPER -->
-          <div class="relative flex-wrap items-center h-screen mt-5 sm:flex sm:justify-around">
-            <!-- MOVIE CLOSE AND RATING -->
-             <div class="absolute left-0 right-0 m-3 sm:mx-8 top-3 sm:top-0 md:-top-4 lg:-top-10 xl:-top-12">
-              <div class="flex justify-between">
-                   <a class="text-[1rem] leading-[1rem] rounded-full shadow-lg top-3 left-3  z-20 bg-white/60 ring-2 ring-white/5 backdrop-blur-lg"
-                onclick="backToSearch(event)">
-                <i class="text-[1rem] leading-[1rem] p-1 far fa-circle-xmark text-black font-medium"></i>
-              </a>
-              <a class="text-[1rem] z-20 leading-[1rem] rounded-lg  p-0.5 top-1 right-3 bg-white/60 ring-2 ring-white/5 backdrop-blur-lg">
-                <span id="rating" class="p-1 text-xs font-bold text-black">
-                  PG-13
-                </span>
-              </a>
-              </div>
+    <!-- MAIN CONTENT -->
+       <section id="movie-container" class="px-2 py-1 max-[500px]:overflow-auto sm:m-4 max-w-7xl rounded-2xl h-dvh sm:m-6 backdrop-blur-xl">
+         <!-- MOVIE WRAPPER -->
+         <div class="relative flex-wrap items-center h-screen mt-2 sm:mt-4 sm:flex sm:justify-around">
+           <!-- MOVIE CLOSE AND RATING -->
+            <div class="absolute left-0 right-0 m-3 sm:mx-8 top-3 sm:top-0 md:-top-4 lg:-top-10 xl:-top-12">
+             <div class="flex justify-between">
+                  <a class="text-[1rem] leading-[1rem] rounded-full shadow-lg top-3 left-3  z-20 bg-white/60 ring-2 ring-white/5 backdrop-blur-lg"
+               onclick="backToSearch(event)">
+               <i class="text-[1rem] leading-[1rem] p-1 far fa-circle-xmark text-black font-medium"></i>
+             </a>
+             <a class="text-[1rem] z-20 leading-[1rem] rounded-lg  p-0.5 top-1 right-3 bg-white/60 ring-2 ring-white/5 backdrop-blur-lg">
+               <span id="rating" class="p-1 text-xs font-bold text-black">
+                 PG-13
+               </span>
+             </a>
              </div>
-            <!-- MOVIE POSTER CONTAINER -->
-              <div class="sm:flex sm:w-1/3">
-                <img id="posterMain" alt="..." class="max-[640px]:w-11/12 max-[450px]:w-full max-[640px]:rounded-2xl m-auto flex-grow rounded-lg" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg">
+            </div>
+           <!-- MOVIE POSTER CONTAINER -->
+             <div class="sm:flex sm:w-1/3">
+               <img id="posterMain" alt="..." class="max-[640px]:w-11/12 max-[450px]:w-full max-[640px]:rounded-2xl m-auto flex-grow rounded-lg" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_SX300.jpg">
+             </div>
+            <!-- MOVIE DETAILS CONTAINER -->
+            <div class="flex flex-col items-center max-[640px]:m-4 sm:w-1/2">
+             <!-- MOVIE TITLE AND RATING -->
+             <div class="flex items-center w-full sm:justify-between">
+               <h3 id="title" class="text-lg font-bold text-white sm:text-left">Guardians of the Galaxy Vol. 2</h3>
+               <span class="text-[0.95rem] leading-[0.95rem] font-semibold rounded-lg  py-1 px-2 h-fit mt-0.5 ml-2 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs flex">
+                 <i class="pr-1 text-yellow-400 fas fa-star"></i>
+                 <span id="imdb">8</span>
+               </span>
               </div>
-             <!-- MOVIE DETAILS CONTAINER -->
-             <div class="flex flex-col items-center max-[640px]:m-4 sm:w-1/2">
-              <!-- MOVIE TITLE AND RATING -->
-              <div class="flex items-center w-full sm:justify-between">
-                <h3 id="title" class="text-lg font-bold text-white sm:text-left">Guardians of the Galaxy Vol. 2</h3>
-                <span class="text-[0.95rem] leading-[0.95rem] font-semibold rounded-lg  py-1 px-2 h-fit mt-0.5 ml-2 bg-white/30 ring-2 ring-white/5 backdrop-blur-xs flex">
-                  <i class="pr-1 text-yellow-400 fas fa-star"></i>
-                  <span id="imdb">8</span>
-                </span>
+               <!-- MOVIE GENRES -->
+               <div class="w-full mb-0 text-lg text-white/85 sm:justify-around">
+                 <span id="genre" class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                   Action
+                 </span>
                </div>
-                <!-- MOVIE GENRES -->
-                <div class="w-full mb-0 text-lg text-white/85 sm:justify-around">
-                  <span id="genre" class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                    Action
-                  </span>
-                  <span class="text-[0.75rem] m-2 leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                    Adventure
-                  </span>
-                  <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                    Comedy
-                  </span>
-                </div>
-                <!-- MOVIE YEAR AND RUNTIME -->
-                <div class="flex flex-row justify-between w-full mt-4 text-center">
-                  <div class="flex flex-col sm:text-left">
-                      <div class="text-sm text-gray-400">Year:</div>
-                      <div id="date" class="release">01 Aug 2014</div>
-                  </div>
-                  <div class="flex flex-col sm:text-right ">
-                    <div class="text-sm text-gray-400">Runtime:</div>
-                    <div id="runtime" class="release">121 min</div>
-                  </div>
-                </div>
-                <!-- MOVIE PLOT -->
-                <div class="mt-4 text-center sm:text-left">
-                  <div class="mb-2 text-xs text-gray-400">Plot:</div>
-                  <p id="plot" class="mb-6 text-xs text-gray-100">
-                    A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.
-                  </p>
-                </div>
-             </div>
-             <div class="w-full">
-              <a
-                  id="watch"
-                  class="flex items-center justify-center w-1/2 px-4 py-2 mx-auto text-white bg-red-500 rounded-full hover:bg-red-700 max-[380px]:mt-20"
-                  href="https://www.google.com/search?q=watch+guardians+of+the+galaxy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                  <div class="text-sm text-white no-underline hover:no-underline">Watch</div>
-              </a>
+               <!-- MOVIE YEAR AND RUNTIME -->
+               <div class="flex flex-row justify-between w-full mt-4 text-center">
+                 <div class="flex flex-col sm:text-left">
+                     <div class="text-sm text-gray-400">Year:</div>
+                     <div id="date" class="release">01 Aug 2014</div>
+                 </div>
+                 <div class="flex flex-col sm:text-right ">
+                   <div class="text-sm text-gray-400">Runtime:</div>
+                   <div id="runtime" class="release">121 min</div>
+                 </div>
+               </div>
+               <!-- MOVIE PLOT -->
+               <div class="mt-4 text-center sm:text-left">
+                 <div class="mb-2 text-xs text-gray-400">Plot:</div>
+                 <p id="plot" class="mb-6 text-xs text-gray-100">
+                   A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.
+                 </p>
+               </div>
+            </div>
+            <div class="relative w-full sm:-top-20">
+             <a
+                 id="watch"
+                 class="flex items-center justify-center w-1/2 px-4 py-2 mx-auto text-white bg-red-500 rounded-full hover:bg-red-700 max-[380px]:my-8"
+                 href="https://www.google.com/search?q=watch+guardians+of+the+galaxy"
+                 target="_blank"
+                 rel="noopener noreferrer"
+             >
+                 <div class="text-sm text-white no-underline hover:no-underline">Watch</div>
+             </a>
           </div>
-          </div>
-        </section>
-      </main>
-    <!-- FOOTER SECTION -->
-    <footer></footer>
-  </body>
+          <div class="h-[5%]"></div>
+         </div>
+       </section>
+     </main>
+   <!-- FOOTER SECTION -->
+   <footer>
+   </footer>
+ </body>
 </html>
-

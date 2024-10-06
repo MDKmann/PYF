@@ -54,12 +54,12 @@
       <!--Main-->
       <section id="hero" class="">
         <div class="container flex flex-col flex-wrap items-center pt-24 mx-auto md:pt-36 md:flex-row">
-          <!--Left Col-->
+ 
           <div class="flex flex-col justify-center w-full overflow-y-hidden xl:w-1/2 lg:items-start">
             <div id="hero-title">
               <h1 class="my-4 text-3xl font-bold leading-tight text-center text-white opacity-75 md:text-4xl lg:text-5xl md:text-left 2xl:text-6xl">
               Tired of 
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-sky-400">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-700 to-pink-700">
                 Doomscrolling
               </span>
               for something to watch?
@@ -76,10 +76,6 @@
               </label>
 
               <div class="relative">
-                <!-- <div class="absolute z-10 flex items-center pl-2 text-lg text-gray-500 pointer-events-none left-1 inset-y-1">
-                  <i class="fas fa-search"></i>
-                </div>
-             -->
                 <input
                 class="p-3 leading-tight text-left text-gray-700 transition duration-300 ease-in-out transform border rounded shadow appearance-none focus:ring hover:scale-105"
                 id="search"
@@ -91,22 +87,30 @@
                 />
                 <button
                 type="submit"
-                onclick="onSearchChange(event)"
-                class="absolute px-2 py-2 font-medium text-blue-700 transition duration-300 ease-in-out rounded-full text-md inset-y-1 right-1 hover:text-blue-800 hover:scale-110 hover:font-extrabold focus:ring-4 focus:outline-none focus:ring-blue-300 dark:text-blue-600 dark:hover:text-blue-700 dark:focus:ring-blue-800">
+                class="absolute px-2 py-2 font-medium text-blue-700 transition duration-300 ease-in-out rounded-full text-md inset-y-1 right-1 hover:text-blue-800 hover:scale-110 hover:font-extrabold focus:text-blue-300 focus:font-extrabold">
                 <i class="px-1 fas fa-search"></i>
                 
                 </button>
               </div>
          
             </div>
+            
+            <span class="block py-2 font-bold text-center text-blue-300">
+              OR
+            </span>
+
+            <span class="block py-2 font-bold text-center text-blue-300">
+              Let us help find a great movie below
+            </span>
 
             <div class="flex items-center justify-between pt-4">
-             <a href="./comingSoon.html">
+            <a >
               <button
               class="px-4 py-2 font-bold text-white transition duration-300 ease-in-out transform rounded bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 focus:ring hover:scale-105"
               type="button"
+              onclick="magicSearch()"
             >
-              MAGIC
+              TRY ME
             </button>
              </a>
             </div>
@@ -135,7 +139,9 @@
 
         <!--Footer-->
         <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
-          <a class="text-gray-300 no-underline hover:no-underline" href="#">&copy; Michael Kuhlmann 2024</a>
+          <div id="copyright" align="center">
+            &copy;  2024 Michael Kuhlmann - All Rights Reserved.
+        </div>
       </div>
     </div>
     </footer>

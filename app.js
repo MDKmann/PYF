@@ -2,6 +2,41 @@
 
 let movieObject = {};
 let searchInput = "";
+let dynamicSearchBox = "flex flex-col items-center w-full px-8 pt-6 pb-8 mb-4 bg-gray-900 rounded-lg shadow-lg opacity-75 sm:w-3/4 md:w-2/3 lg:w-1/2 sm:mx-auto sm:mb-6 md:mb-8 mt-12 sm:mt-24 lg:mt-36 xl:mt-40";
+const magicArray = [
+    "Avengers",
+    "Harry Potter",
+    "Batman",
+    "Spider Man",
+    "Inside Out",
+    "The Lord of the Rings",
+    "The Lion King",
+    "Top Gun",
+    "Jumanji",
+    "The Adam Project",
+    "27 Dresses",
+    "Meet the Fockers",
+    "Honey I Shrunk the Kids",
+    "How to Train Your Dragon",
+    "The Family Man",
+    "The Cinderella Story",
+    "Never Been Kissed",
+    "The Princess Diaries",
+    "The Polar Express",
+    "21 Jumpstreet",
+    "21",
+    "Molly's Game",
+    "The Age of Adaline"
+]
+
+
+function magicSearch() {
+  let magicIndex = Math.floor(Math.random() * 23);
+  let magicValue = magicArray[magicIndex];
+  let previousSearch = magicValue
+  return onSearchChange(null, previousSearch);
+}
+
 
 
 function rerunSearch() {
@@ -19,11 +54,6 @@ function rerunSearch() {
     document.getElementById("loading-overlay").style.display = "none";
   }, 2000);
 }
-
-// function dynamicLandingPage(){
-//   document.getElementById("hero").style.display = "none"
-//   document.getElementById("searchContainer").style.display = "md:mt-36"
-// }
 
 function showMovieDetails(imdbID) {
   let fetchedMovie = movieObject[imdbID];
@@ -61,10 +91,7 @@ function fixTime(runtime) {
     )
    
     document.getElementById("hero").style.display = "none"
-    document.getElementById("searchContainer").classList.add("mt-24")
-    document.getElementById("searchContainer").classList.add("sm:mt-36")
-    document.getElementById("searchContainer").classList.add("lg:mt-40")
-    document.getElementById("searchContainer").classList.add("xl:mt-40")
+    document.getElementById("searchContainer").className = dynamicSearchBox;
 
     const moviesContainer = document.querySelector(".movies");
       moviesContainer.innerHTML = responses.map(response => {
@@ -73,18 +100,17 @@ function fixTime(runtime) {
       if(movie.Poster !== "N/A") {
         return `
                 <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs movie">
-                    <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6"
-                             >
-                             <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit mt-1 font-bold text-black/85 bg-gray-300/60 ring-2 ring-white/5 backdrop-blur-lg flex">
+                          <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6">
+                             <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit  font-bold text-black/85 bg-gray-300/60 ring-2 ring-white/5 backdrop-blur-lg flex">
                               <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
                               ${movie.imdbRating}
                             </span>
-                            </a>
-                            <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg font-bold p-1 top-9 right-6 bg-gray-300/60 ring-3 ring-white/5 backdrop-blur-lg"
+                          </a>
+                          <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg font-bold p-1 top-9 right-6 bg-gray-300/60 ring-3 ring-white/5 backdrop-blur-lg"
                               <span class="p-1 text-xs  text-black/85">
                               ${movie.Rated}
                               </span>
-                    </a>
+                           </a>
                     <a class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 h-full">
                           <img
                           alt="Movie Poster"
