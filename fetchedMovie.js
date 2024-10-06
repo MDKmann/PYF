@@ -49,6 +49,6 @@ document.addEventListener("DOMContentLoaded", updateMovieDetails);
 
 async function backToSearch(event) {
     const searchInput = localStorage.getItem("searchInput");
-    window.location.href = `${window.location.origin}/index.html`;
+    window.location.href = `${window.location.origin}/PYF/`;
     
 };

@@ -29,7 +29,7 @@ function showMovieDetails(imdbID) {
   let fetchedMovie = movieObject[imdbID];
   localStorage.setItem("fetchedMovie", JSON.stringify(fetchedMovie));
   localStorage.setItem("searchInput", searchInput);
-  window.location.href = `${window.location.origin}/movieDetails`;
+  window.location.href = `${window.location.origin}PYF/movieDetails`;
 }
 
 function fixTime(runtime) {
