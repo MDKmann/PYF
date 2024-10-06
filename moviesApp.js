@@ -97,7 +97,6 @@ async function onSearchChange(event, previousSearch = null) {
                             </span>
                             </a>
                             <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-lg  p-1 top-9 right-6 bg-gray-300/50 ring-3 ring-white/5 backdrop-blur-xs"
-                              href="./movies.html">
                               <span class="p-1 text-xs font-bold text-black/85">
                               ${movie.Rated}
                               </span>

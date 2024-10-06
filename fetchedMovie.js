@@ -30,7 +30,7 @@ watchMovieSearch();
 
 function updateMovieDetails() {
      document.getElementById("rating").textContent = movieObject.Rated;
-     document.getElementById("trailer").href = youtubeSearch(movieObject.Title);
+    //  document.getElementById("trailer").href = youtubeSearch(movieObject.Title);
      document.getElementById("title").textContent = movieObject.Title;
      document.getElementById("imdb").textContent = movieObject.imdbRating;
      document.getElementById("genre").textContent = splitGenres(movieObject.Genre);
@@ -40,7 +40,6 @@ function updateMovieDetails() {
      document.getElementById("runtime").textContent = fixTime(movieObject.Runtime);
      document.getElementById("plot").textContent = movieObject.Plot;
      document.getElementById("posterMain").src = movieObject.Poster;
-     document.getElementById("posterBG").src = movieObject.Poster;
      document.getElementById("watch").href = watchMovieSearch(movieObject.Title);
 }
 
@@ -50,6 +49,6 @@ document.addEventListener("DOMContentLoaded", updateMovieDetails);
 
 async function backToSearch(event) {
     const searchInput = localStorage.getItem("searchInput");
-    window.location.href = `${window.location.origin}/movies.html`;
+    window.location.href = `${window.location.origin}/index.html`;
     
 };
