@@ -73,7 +73,7 @@ function fixTime(runtime) {
       if(movie.Poster !== "N/A") {
         return `
                 <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs movie">
-                  <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6"
+                    <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6"
                              >
                              <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit mt-1 font-bold text-black/85 bg-gray-300/60 ring-2 ring-white/5 backdrop-blur-lg flex">
                               <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
@@ -84,7 +84,7 @@ function fixTime(runtime) {
                               <span class="p-1 text-xs  text-black/85">
                               ${movie.Rated}
                               </span>
-                            </a>
+                    </a>
                     <a class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 h-full">
                           <img
                           alt="Movie Poster"
