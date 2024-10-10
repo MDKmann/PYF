@@ -3,7 +3,7 @@
 let movieObject = {};
 let sortArray = [];
 let searchInput = "";
-let dynamicSearchBox = "flex flex-col items-center w-full px-8 pt-6 pb-8 mb-4 bg-gray-900 rounded-lg shadow-lg opacity-75 sm:w-3/4 md:w-2/3 lg:w-1/2 sm:mx-auto sm:mb-6 md:mb-8 mt-12 sm:mt-24 lg:mt-36 xl:mt-40";
+let dynamicSearchBox = "flex flex-col items-center w-full px-8 pt-6 pb-8 mb-4 bg-gray-900 rounded-lg shadow-lg opacity-75 sm:w-3/4 md:w-2/3 sm:mx-auto sm:mb-6 md:mb-8 mt-12 sm:mt-24 lg:mt-36 xl:mt-40";
 const magicArray = [
     "Avengers",
     "Harry Potter",
@@ -70,6 +70,8 @@ function fixTime(runtime) {
   return hours + "h " + mins +"m";
 }
 
+// Gets an array of movies from movieObject hash and sorts them by movies choosen attribute
+// calls fillMoviesContainer function and passes the sorted array of movies
 function sortMovies(event) {
   let sortEvent = event.target.value;
   let movies = Object.values(movieObject);
@@ -99,7 +101,7 @@ function fillMoviesContainer(movies) {
      return `
            <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs movie">
              <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6">
-               <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit  font-bold text-black/85 bg-gray-300/60 ring-2 ring-white/5 backdrop-blur-lg flex">
+               <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit font-bold text-black/85 bg-gray-300/60 ring-2 ring-white/5 backdrop-blur-lg flex">
                  <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
                  ${movie.imdbRating}
                </span>
@@ -113,11 +115,11 @@ function fillMoviesContainer(movies) {
                <img
                  alt="Movie Poster"
                  src="${movie.Poster}"
-                 class="  mx-auto rounded-lg w-[90%] shadow-[0px_4px_8px_1px] shadow-black"
+                 class="  mx-auto rounded-lg w-[90%] h-2/3 md:h-3/4 lg:h-2/3 shadow-[0px_4px_8px_1px] shadow-black"
                  onclick="showMovieDetails('${imdbID}')"
                />
-               <div class="m-4">
-                 <dl>
+               <div class="m-4 flex flex-col justify-around">
+                 <dl class="h-1/3 sm:h-1/2 items-center flex">
                    <div class="flex items-center justify-between">
                      <dt class="sr-only">Movie Title</dt>
                      <dd class="text-sm font-medium text-left">${movie.Title}</dd>
@@ -127,7 +129,7 @@ function fillMoviesContainer(movies) {
                      </dd>
                    </div>
                  </dl>
-                 <dl>
+                 <dl class="h-1/3 sm:h-1/2 items-center flex">
                    <div class="flex items-center justify-between gap-4 mt-4 text-xs">
                      <dt class="sr-only">Genre</dt>
                        <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
@@ -148,6 +150,9 @@ function fillMoviesContainer(movies) {
 }
 
 async function onSearchChange(event, previousSearch = null) {
+    setTimeout(function removeLoadingOverlay(){
+      document.getElementById("loading-overlay").style.display = "none";
+    }, 1500);
     searchInput = previousSearch || event.target.value;
     const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput}&apikey=fd7c8c4e`);
     const moviesData = await movies.json();

@@ -69,7 +69,7 @@
             </p>
           </div>
       </section>
-          <div id="searchContainer" class="flex flex-col items-center w-full px-4 pt-6 pb-8 mb-4 bg-gray-900 shadow-lg opacity-75 rounded-xl sm:w-3/4 md:w-2/3 lg:w-1/2 sm:mx-auto sm:my-6 md:my-8">
+          <div id="searchContainer" class="flex flex-col items-center w-full px-4 pt-6 pb-8 mb-4 bg-gray-900 shadow-lg opacity-75 rounded-xl sm:w-3/4 md:w-2/3 sm:mx-auto sm:my-6 md:my-8">
             <div class="flex flex-col items-center w-full mb-4">
               <label class="block py-2 mb-2 font-bold text-blue-300" for="Search">
                 Search for any movie below
@@ -93,10 +93,10 @@
                 </button>
               </div>
                -->
-               <form class="flex flex-col gap-3 md:flex-row">
-                <div class="flex">
+               <form class="flex flex-col items-center gap-3 lg:justify-center md:w-3/4 lg:flex-row">
+                <div class="flex w-full h-auto bg-blue-300 border-4 border-blue-300 rounded-xl md:w-80 focus:outline-none focus:border-blue-600 ">
                     <input 
-                    class="w-full h-10 px-3 border-2 rounded-l md:w-80 border-sky-500 focus:outline-none focus:border-sky-500"
+                    class="w-full h-10 px-3 transition duration-300 ease-in-out transform border-2 border-blue-300 rounded rounded-lg shadow appearance-none hover:z-10 hover:translate-x-1 md:w-80 focus:outline-none focus:border-blue-600 focus:ring hover:scale-105"
                     id="search"
                     type="text" 
                     placeholder="Search by Title..."
@@ -105,21 +105,24 @@
                     >
                     <button 
                     type="submit" 
-                    class="px-2 py-0 text-white rounded-r bg-sky-500 md:px-3 md:py-1">
+                    class="px-2 py-0 text-white transition duration-300 ease-in-out transform bg-blue-300 rounded-lg shadow appearance-none md:py-1 focus:bg-blue-600 hover:scale-105">
                       <i class="px-1 fas fa-search"></i>
                     </button>
                 </div>
-                <select 
+                <div class="relative">
+                  <select 
                 id="sort" 
                 onchange="sortMovies(event)"
-                class="w-full h-10 px-2 py-0 tracking-wider border-2 rounded border-sky-500 focus:outline-none focus:border-sky-500 text-sky-500 md:px-3 md:py-1"
+                class="w-full md:w-24 h-11 px-2 py-0 tracking-wider text-center border-[6px] lg:border-8 rounded-lg lg:rounded-xl border-blue-300 lg:bg-blue-300 focus:outline-blue-300 focus:border-blue-600 text-blue-300 lg:text-white  appearance-none transition duration-300 ease-in-out transform border rounded shadow  focus:ring hover:scale-105" 
                 >
-                  <option value="" disabled selected="">Sort</option>
+                  <option value="" disabled selected="">Sort </option>
                   <option value="YEAR_HIGH_TO_LOW">Year Released, Newest to Oldest</option>
                   <option value="YEAR_LOW_TO_HIGH">Year Released, Oldest to Newest</option>
                   <option value="RATING_HIGH_TO_LOW">Rating, Highest to Lowest</option>
                   <option value="RATING_LOW_TO_HIGH">Rating, Lowest to Highest</option>
+                  
               </select>
+                </div>
             </form>
             </div>
             
@@ -144,7 +147,7 @@
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 gap-4 m-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 lg:gap-8 movies">
+        <div class="grid grid-cols-1 gap-4 m-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-8 movies">
         </div>
         <!--Right Col-->
         <div class="flex w-full p-12 overflow-hidden xl:mb-20">
