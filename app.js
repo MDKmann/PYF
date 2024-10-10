@@ -32,7 +32,7 @@ const magicArray = [
 
 
 function magicSearch() {
-  let magicIndex = Math.floor(Math.random() * 23);
+  let magicIndex = Math.floor(Math.random() * 22);
   let magicValue = magicArray[magicIndex];
   let previousSearch = magicValue
   return onSearchChange(null, previousSearch);
@@ -99,7 +99,7 @@ function fillMoviesContainer(movies) {
    const imdbID = movie.imdbID;
    if (movie.Poster !== "N/A") {
      return `
-           <div class="object-contain relative h-auto text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs movie">
+           <div class="object-contain relative h-auto min-h-[500px] text-[0.75rem] leading-[0.75rem] rounded-lg bg-white/30 ring-2 ring-white/5 backdrop-blur-xs movie">
              <a class="absolute text-[0.75rem] leading-[0.75rem] rounded-full shadow-lg top-9 left-6">
                <span class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2 h-fit font-bold text-black/85 bg-gray-300/60 ring-2 ring-white/5 backdrop-blur-lg flex">
                  <i class="pr-1 text-yellow-400 fas fa-star"></i></i>
@@ -118,25 +118,29 @@ function fillMoviesContainer(movies) {
                  class="  mx-auto rounded-lg w-[90%] h-2/3 md:h-3/4 lg:h-2/3 shadow-[0px_4px_8px_1px] shadow-black"
                  onclick="showMovieDetails('${imdbID}')"
                />
-               <div class="m-4 flex flex-col justify-around">
-                 <dl class="h-1/3 sm:h-1/2 items-center flex">
-                   <div class="flex items-center justify-between">
-                     <dt class="sr-only">Movie Title</dt>
-                     <dd class="text-sm font-medium text-left">${movie.Title}</dd>
-                     <dt class="sr-only">Year</dt>
-                     <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg ml-1 py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
-                     ${movie.Year}
-                     </dd>
+               <div class="m-4 w-auto">
+                 <dl class="h-1/3 sm:h-1/2 w-auto items-center justify-between flex">
+                   <div class="flex flex-row items-center justify-between">
+                     <div>
+                      <dt class="sr-only">Movie Title</dt>
+                      <dd class="text-sm font-medium text-left self-start">${movie.Title}</dd>
+                     </div> 
+                     <div>
+                      <dt class="sr-only">Year</dt>
+                      <dd class="text-[0.75rem] leading-[0.75rem] self-end  rounded-lg ml-1 py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                      ${movie.Year}
+                      </dd>
+                     </div>
                    </div>
                  </dl>
-                 <dl class="h-1/3 sm:h-1/2 items-center flex">
+                 <dl class="h-1/3 sm:h-1/2 items-center flex w-auto">
                    <div class="flex items-center justify-between gap-4 mt-4 text-xs">
                      <dt class="sr-only">Genre</dt>
-                       <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                       <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg self-start py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
                        ${movie.Genre}
                        </dd>
                      <dt class="sr-only">Runtime</dt>
-                       <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg  py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
+                       <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg self-end py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
                        ${fixTime(movie.Runtime)}
                        </dd>
                    </div>
@@ -150,9 +154,6 @@ function fillMoviesContainer(movies) {
 }
 
 async function onSearchChange(event, previousSearch = null) {
-    setTimeout(function removeLoadingOverlay(){
-      document.getElementById("loading-overlay").style.display = "none";
-    }, 1500);
     searchInput = previousSearch || event.target.value;
     const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput}&apikey=fd7c8c4e`);
     const moviesData = await movies.json();
