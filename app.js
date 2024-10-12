@@ -42,7 +42,8 @@ function magicSearch() {
 
 
 function rerunSearch() {
-  document.getElementById("loading-overlay").style.display = "fixed";
+  console.log("im running")
+  document.getElementById("loading-overlay").style.display = "block";
   let previousSearch = localStorage.getItem("searchInput");
   let fromDetailsPage = document.referrer.includes("movieDetails")
   if (previousSearch && fromDetailsPage) {
@@ -70,6 +71,15 @@ function fixTime(runtime) {
   let mins = stringToNum - (hours * 60);
   return hours + "h " + mins +"m";
 }
+
+
+
+
+function showLoadingOverlay() {
+  let overlay = document.getElementById("loading-overlay")
+  return overlay.style.display = "block"
+}
+
 
 // Gets an array of movies from movieObject hash and sorts them by movies choosen attribute
 // calls fillMoviesContainer function and passes the sorted array of movies
@@ -152,9 +162,14 @@ function fillMoviesContainer(movies) {
           `
    };
  }).join("")
+ setTimeout(function removeLoadingOverlay(){
+  document.getElementById("loading-overlay").style.display = "none";
+}, 3000);
 }
 
 async function onSearchChange(event, previousSearch = null) {
+    showLoadingOverlay();
+
     movieObject = {};
     searchInput = previousSearch || event.target.value;
     const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput}&apikey=fd7c8c4e`);
@@ -172,14 +187,11 @@ async function onSearchChange(event, previousSearch = null) {
       })
     )
     fillMoviesContainer(Object.values(movieObject));
-   
+
     document.getElementById("hero").style.display = "none"
     document.getElementById("searchContainer").className = dynamicSearchBox;
-
-    setTimeout(function removeLoadingOverlay(){
-      document.getElementById("loading-overlay").style.display = "none";
-    }, 1500);
 };
+
 
 document.addEventListener("DOMContentLoaded", rerunSearch);
   
