@@ -16,7 +16,7 @@ const magicArray = [
     "Jumanji",
     "The Adam Project",
     "27 Dresses",
-    "Meet the Fockers",
+    "Meet the Parents",
     "Honey I Shrunk the Kids",
     "How to Train Your Dragon",
     "The Family Man",
@@ -24,8 +24,8 @@ const magicArray = [
     "Never Been Kissed",
     "The Princess Diaries",
     "The Polar Express",
-    "21 Jumpstreet",
-    "21",
+    "21 Jump Street",
+    "Happy Gilmore",
     "Molly's Game",
     "The Age of Adaline"
 ]
@@ -35,6 +35,7 @@ function magicSearch() {
   let magicIndex = Math.floor(Math.random() * 22);
   let magicValue = magicArray[magicIndex];
   let previousSearch = magicValue
+  console.log(previousSearch);
   return onSearchChange(null, previousSearch);
 }
 
@@ -111,16 +112,16 @@ function fillMoviesContainer(movies) {
                  ${movie.Rated}
                </span>
              </a>
-             <a class="block py-3 rounded-lg shadow-sm object shadow-indigo-100 h-full">
+             <a class="flex-col py-3 rounded-lg shadow-sm object shadow-indigo-100 h-full">
                <img
                  alt="Movie Poster"
                  src="${movie.Poster}"
-                 class="  mx-auto rounded-lg w-[90%] h-2/3 md:h-3/4 lg:h-2/3 shadow-[0px_4px_8px_1px] shadow-black"
+                 class="  mx-auto rounded-lg w-[90%] h-3/4 lg:h-2/3 lg:mb-8 lg:mt-5 shadow-[0px_4px_8px_1px] my-4 shadow-black"
                  onclick="showMovieDetails('${imdbID}')"
                />
-               <div class="m-4 w-auto">
-                 <dl class="h-1/3 sm:h-1/2 w-auto items-center justify-between flex">
-                   <div class="flex flex-row items-center justify-between">
+               <div class="m-4 w-auto h-auto">
+                 <dl class="h-auto sm:h-1/2 w-auto items-center justify-between flex">
+                   <div class="flex flex-row items-center justify-between w-full">
                      <div>
                       <dt class="sr-only">Movie Title</dt>
                       <dd class="text-sm font-medium text-left self-start">${movie.Title}</dd>
@@ -133,8 +134,8 @@ function fillMoviesContainer(movies) {
                      </div>
                    </div>
                  </dl>
-                 <dl class="h-1/3 sm:h-1/2 items-center flex w-auto">
-                   <div class="flex items-center justify-between gap-4 mt-4 text-xs">
+                 <dl class="h-auto sm:h-1/2 items-center flex w-auto">
+                   <div class="flex items-center justify-between gap-4 mt-4 text-xs w-full">
                      <dt class="sr-only">Genre</dt>
                        <dd class="text-[0.75rem] leading-[0.75rem] rounded-lg self-start py-1 px-2  bg-white/30 ring-2 ring-white/5 backdrop-blur-xs">
                        ${movie.Genre}
@@ -154,6 +155,7 @@ function fillMoviesContainer(movies) {
 }
 
 async function onSearchChange(event, previousSearch = null) {
+    movieObject = {};
     searchInput = previousSearch || event.target.value;
     const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput}&apikey=fd7c8c4e`);
     const moviesData = await movies.json();
@@ -165,6 +167,7 @@ async function onSearchChange(event, previousSearch = null) {
         ); // Send request for each id
         const responsesData = await getResponses.json();
         let imdbID = responsesData.imdbID
+        
         movieObject[imdbID] = responsesData;
       })
     )
